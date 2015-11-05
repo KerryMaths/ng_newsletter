@@ -26,7 +26,7 @@
           
           <ul id="programs_list" class="">
             <li ng-repeat="program in programs">
-              <span npr-link player="player" ng-model="program"></span>
+              <span npr-Link player="player" ng-model="program"></span>
             </li>
           </ul>
 
@@ -50,6 +50,11 @@
   <!-- old scripts -->
     <!script src="js/vendor/custom.modernizr.js"></script>
     <!script src="js/vendor/angular.min.js"></script>
+    <script>
+      document.write('<script src=js/vendor/'
+        + ('__proto__' in {} ? 'zepto' : 'jquery')
+        + '.js><\/script>');
+    </script>
 
     <!-- new scripts -->
     <script src="../bower_components/modernizr/modernizr.js"></script>
@@ -62,7 +67,9 @@
     <script src="js/playerviewDirective.js"></script>
     <script src="js/playerController.js"></script>
     <script src="js/relatedController.js"></script>
-    <script src="js/frameworkController.js"></script>
+    <script src="js/frameworkController.js"></script> 
+    -->
+    <!script src="js/vendor/oldMain.js"></script>
     
    
   </body>

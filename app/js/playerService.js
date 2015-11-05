@@ -1,10 +1,8 @@
 (function() {
 
 
-    function PlayerService(AudioService) {
+    function player(AudioService) {
 
-        var apiKey = "MDIwNjQzNzEzMDE0NDM1NDMxNjgyMzUxYg001";
-        var nprUrl = 'http://api.npr.org/query?id=61&fields=relatedLink,title,byline,text,audio,image,pullQuote,all&output=JSON';
         var audio = AudioService;
 
         var player = {
@@ -77,6 +75,6 @@
 
     angular
         .module('myApp')
-        .factory('PlayerService', ['AudioService', PlayerService])
+        .factory('player', ['AudioService', player])
 
 })();

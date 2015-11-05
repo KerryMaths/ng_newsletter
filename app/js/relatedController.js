@@ -1,8 +1,8 @@
 (function() {
  
-    function RelatedController ($scope, PlayerService) {
+    function RelatedController ($scope, player) {
 
-    	$scope.player = PlayerService;
+    	$scope.player = player;
 
         $scope.$watch('player.current', function(newVal) {
 
@@ -19,6 +19,6 @@
 
     angular
         .module('myApp')
-        .controller('RelatedController', [ '$scope', 'PlayerService', RelatedController ])
+        .controller('RelatedController', [ '$scope', 'player', RelatedController ])
 
 })();

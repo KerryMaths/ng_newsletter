@@ -9,7 +9,7 @@
                 ngModel: '='
             },
 
-            templateUrl: './views/playerView.html',
+            templateUrl: 'views/playerView.html',
             link: function(scope, iElm, iAttrs, controller) {
                 scope.$watch('ngModel.current', function(newVal) {
                     if (newVal) {
