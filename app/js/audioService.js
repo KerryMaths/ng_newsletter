@@ -1,12 +1,12 @@
 (function() {
 
-    function AudioService($document) {
+    function audio($document) {
         var audio = $document[0].createElement('audio');
         return audio;
     };
 
     angular
         .module('myApp')
-        .factory('AudioService', ['$document', AudioService])
+        .factory('audio', ['$document', audio])
 
 })();

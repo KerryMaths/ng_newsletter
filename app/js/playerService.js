@@ -1,9 +1,9 @@
 (function() {
 
 
-    function player(AudioService) {
+    function player(audio) {
 
-        var audio = AudioService;
+        var audio = audio;
 
         var player = {
 
@@ -75,6 +75,6 @@
 
     angular
         .module('myApp')
-        .factory('player', ['AudioService', player])
+        .factory('player', ['audio', player])
 
 })();

@@ -1,7 +1,6 @@
 (function() {
 
     //set service as a dependancy
-    angular
-        .module('myApp', []);
+    angular.module('myApp', []);
 
 })();
