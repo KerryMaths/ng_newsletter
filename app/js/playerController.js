@@ -1,5 +1,6 @@
 (function() {
 
+    'use strict';
  
     function PlayerController ($scope, nprService, player) {
     	

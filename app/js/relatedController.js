@@ -1,5 +1,7 @@
 (function() {
- 
+
+    'use strict';
+
     function RelatedController ($scope, player) {
 
     	$scope.player = player;

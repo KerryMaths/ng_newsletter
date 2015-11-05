@@ -1,5 +1,7 @@
 (function() {
 
+    'use strict';
+
     function nprLink() {
         return {
             restrict: 'EA',
@@ -7,15 +9,15 @@
             replace: true,
             scope: {
                 ngModel: '=',
-                play: '='
+                player: '='
             },
             templateUrl: 'views/nprListItem.html',
             link: function(scope, ele, attr) {
                 scope.duration = scope.ngModel.audio[0].duration.$text;
             }
         }
-    };
 
+    }
     angular
         .module("myApp")
         .directive('nprLink', nprLink)

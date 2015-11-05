@@ -1,9 +1,8 @@
 (function() {
 
-
-    function player(audio) {
-
-        var audio = audio;
+    'use strict';
+    
+    function player(audio, $rootScope) {
 
         var player = {
 
@@ -16,15 +15,12 @@
                 if (player.playing)
                     player.stop();
 
-                var url = program.AudioService[0].format.mp4.$text;
+                var url = program.audio[0].format.mp4.$text;
                 player.current = program;
                 audio.src = url;
                 audio.play();
                 player.playing = true;
-
             },
-
-            //stop function
             stop: function() {
                 if (player.playing) {
                     audio.pause();
@@ -44,37 +40,33 @@
             },
 
             currentTime: function() {
-              return audio.currentTime;
+                return audio.currentTime;
             },
             currentDuration: function() {
-              return parseInt(audio.duration);
+                return audio.duration;
             }
-
         };
-
-        audio.addEventListener('timeupdate', function(evt) {
+        audio.addEventListener('canplay', function(evt) {
             $rootScope.$apply(function() {
-              player.progress = player.currentTime();
-              player.progress_percent = (player.progress / player.currentDuration()) * 100;
+                player.ready = true;
             });
         });
-        
+        audio.addEventListener('timeupdate', function(evt) {
+            $rootScope.$apply(function() {
+                player.progress = player.currentTime();
+                player.progress_percent = player.progress / player.currentDuration();
+            });
+        });
         audio.addEventListener('ended', function() {
             $rootScope.$apply(player.stop());
         });
-
-        audio.addEventListener('canplay', function() {
-            $rootScope.$apply(function() {
-              player.ready = true;
-            });
-        });
-
         return player;
-        
+
+
     };
 
     angular
         .module('myApp')
-        .factory('player', ['audio', player])
+        .factory('player', ['audio', '$rootScope', player])
 
 })();
