@@ -8,9 +8,9 @@ An audio player that will show you the current stories on the show "Morning Edit
 ## Instructions
 
 - Install NodeJS (+ NPM)
-- Install Bower, Gulp  globally: npm install -g bower gulp karma
+- Install Bower, Gulp  globally: `npm install -g bower gulp karma`
 - In project root directory:
-	- Download dependencies: npm install && bower install
+	- Download dependencies: `npm install && bower install`
 
 
 ## TO DO
