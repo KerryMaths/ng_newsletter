@@ -23,7 +23,7 @@ An audio player that will show you the current stories on the show "Morning Edit
 - finaalize readME
 
 
-### Special thanks to [NPR](http://www.npr.org/)
+#### Special thanks to [NPR](http://www.npr.org/)
 
 For more information on AngularJS please check out http://angularjs.org/
 
