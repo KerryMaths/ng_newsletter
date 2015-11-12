@@ -12,8 +12,9 @@
             ready: false,
 
             play: function(program) {
-                if (player.playing)
+                if (player.playing){
                     player.stop();
+                  }
 
                 var url = program.audio[0].format.mp4.$text;
                 player.current = program;
@@ -31,8 +32,9 @@
 
             //restart function
             restart: function(program) {
-                if (player.playing)
+                if (player.playing){
                     audio.pause();
+                  }
 
                 player.current = program;
                 audio.play();
@@ -46,12 +48,12 @@
                 return audio.duration;
             }
         };
-        audio.addEventListener('canplay', function(evt) {
+        audio.addEventListener('canplay', function() {
             $rootScope.$apply(function() {
                 player.ready = true;
             });
         });
-        audio.addEventListener('timeupdate', function(evt) {
+        audio.addEventListener('timeupdate', function() {
             $rootScope.$apply(function() {
                 player.progress = player.currentTime();
                 player.progress_percent = player.progress / player.currentDuration();
@@ -63,10 +65,10 @@
         return player;
 
 
-    };
+    }
 
     angular
         .module('myApp')
-        .factory('player', ['audio', '$rootScope', player])
+        .factory('player', ['audio', '$rootScope', player]);
 
 })();
