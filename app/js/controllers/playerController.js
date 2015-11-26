@@ -6,7 +6,7 @@
     	
     	$scope.player = player;
         nprService.programs(apiKey)
-            .success(function(data, status) {
+            .success(function(data) {
                     $scope.programs = data.list.story;
     	})
     }
