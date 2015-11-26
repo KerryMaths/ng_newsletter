@@ -15,11 +15,10 @@ An audio player that will show you the current stories on the show "Morning Edit
 
 ## TO DO
 
-- style audio player
-- make Sass file
+- style audio player using Sass
 - update gulp accordingly
 - unit testing
-- finaalize readME
+- finalize readme
 
 #### Special thanks to [NPR](http://www.npr.org/)
 
